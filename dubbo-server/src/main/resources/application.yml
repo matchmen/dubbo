@@ -1,0 +1,49 @@
+#
+###server.port=8084
+#
+##spring.dubbo.application.name=provider
+##spring.dubbo.registry.address=zookeeper://127.0.0.1:2181
+##spring.dubbo.protocol.name=dubbo
+##spring.dubbo.protocol.port=20888
+#server:
+#  port: 8090
+#
+#spring:
+#  dubbo:
+#    application:
+#      name: dubbbo-server
+#    base-package: com.mt      # dubbo服务发布者所在的包
+#    registry:
+#      address: 127.0.0.1              # zookeeper注册中心的地址
+#      port: 2181                           # zookeeper注册中心的端口
+#    protocol:
+#      name: dubbo
+#      serialization: hessian2
+#    provider:
+#      retries: 0
+
+
+#spring.dubbo.application.name=provider
+#spring.dubbo.server=true
+#  #注册中心地址
+#spring.dubbo.registry.address=zookeeper://127.0.0.1:2181
+#  #dubbo 协议
+#spring.dubbo.protocol.name=dubbo
+#spring.dubbo.protocol.port=20880
+
+
+spring:
+  dubbo:
+    application:
+      name: dubbbo-server
+    server: true
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    scan: com.mt.server.api.impl
+
+
+server:
+  port: 8090
